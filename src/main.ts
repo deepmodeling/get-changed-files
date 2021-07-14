@@ -30,6 +30,10 @@ async function run(): Promise<void> {
         base = context.payload.pull_request?.base?.sha
         head = context.payload.pull_request?.head?.sha
         break
+      case 'pull_request_target':
+        base = context.payload.pull_request?.base?.sha
+        head = context.payload.pull_request?.head?.sha
+        break
       case 'push':
         base = context.payload.before
         head = context.payload.after
